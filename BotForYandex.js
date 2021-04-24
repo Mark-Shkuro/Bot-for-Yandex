@@ -46,9 +46,10 @@ if (buttonSearch != undefined){ // Главная страница яндекс 
 for(let i = 0; i<links.length; i++){
     let link = links[i];
     if(link.href.indexOf(site) != -1){
-    link.click();
-    goToTheNextPage = false;
-    break;
+        link.target = "_self";
+        link.click();
+        goToTheNextPage = false;
+        break;
    }
  }
     let nextPage = document.querySelector(".pager__item_kind_next");
